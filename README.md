@@ -1,14 +1,9 @@
-This include allows you to create new type of menu instead of standart menus or dialogs.
-* Creating of menu for each player.
-* Custom rotaion for menu.
-* Setting params for every box like for object.
-* Auto-calculatting of new lines and box position.
+### My Functions
+* SetBoxMaterial(playerid,box,model,txd[],texture[], selectcolor=0, unselectcolor=0)
+  * Set box texture
+    * Returns _true_ if menu has been created, or _false_.
 
-### Requirements
-* 0.3e or upper SA-MP server.
-* [Streamer Plugin](https://github.com/samp-incognito/samp-streamer-plugin)
-
-### Functions
+### Default Functions
 * Create3DMenu(playerid,Float: x,Float:y,Float:z,Float:rotation,boxes);
   * Creating 3DMenu in position with number of boxes for player.
     * Returns _true_ if menu has been created, or _false_.
