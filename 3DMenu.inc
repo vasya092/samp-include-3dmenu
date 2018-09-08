@@ -59,6 +59,18 @@ stock SetBoxText(playerid,box,text[],materialsize,fontface[],fontsize,bold,fontc
     return true;
 }
 
+stock SetBoxMaterial(playerid,box,model,txd[],texture[], selectcolor=0, unselectcolor=0)
+{
+    if(!MenuData[playerid][IsExist]) return false;
+    if(box == MenuData[playerid][Boxes] || box < 0) return false;
+    if(MenuData[playerid][Objects][box] == INVALID_OBJECT_ID) return false;
+    MenuData[playerid][SelectColor][box] = selectcolor;
+    MenuData[playerid][UnselectColor][box] = unselectcolor;
+    if(SelectedBox[playerid] == box) SetDynamicObjectMaterial(MenuData[playerid][Objects][box],0,model,txd,texture,selectcolor);
+    else SetDynamicObjectMaterial(MenuData[playerid][Objects][box],0,model,txd,texture,unselectcolor);
+    return true;
+}
+
 stock Select3DMenu(playerid)
 {
     if(!IsPlayerConnected(playerid)) return false;
